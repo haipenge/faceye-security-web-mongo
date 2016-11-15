@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="default.web.security.manager" extends ="default.manager">
+        <put-attribute name="default-header" value="/component/security/web/template/manager/default_header.jsp"></put-attribute>
+    </definition>
+    <definition name="default.web.security.manager.center" extends ="default.center"></definition>
+   
+   
+</tiles-definitions>

@@ -1,0 +1,5 @@
+{"_class":"com.faceye.component.security.web.web.entity.Menu","_id":{"$numberLong":"1"},"name":"系统管理","type":1}
+{"_class":"com.faceye.component.security.web.web.entity.Menu","_id":{"$numberLong":"2"},"name":"角色管理","parentId":{"$numberLong":"1"},"resource":{"$id":{"$numberLong":"7"},"$ref":"security_resource"},"type":1}
+{"_class":"com.faceye.component.security.web.web.entity.Menu","_id":{"$numberLong":"3"},"name":"用户管理","parentId":{"$numberLong":"1"},"resource":{"$id":{"$numberLong":"8"},"$ref":"security_resource"},"type":1}
+{"_class":"com.faceye.component.security.web.web.entity.Menu","_id":{"$numberLong":"4"},"name":"资源管理","parentId":{"$numberLong":"1"},"resource":{"$id":{"$numberLong":"9"},"$ref":"security_resource"},"type":1}
+{"_class":"com.faceye.component.security.web.web.entity.Menu","_id":{"$numberLong":"5"},"name":"菜单管理","parentId":{"$numberLong":"1"},"resource":{"$id":{"$numberLong":"10"},"$ref":"security_resource"},"type":1}

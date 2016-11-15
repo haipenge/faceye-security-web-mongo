@@ -1,0 +1,10 @@
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"1"},"name":"/security/","url":"/security/"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"2"},"name":"/parse/","url":"/parse/"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"3"},"name":"/search/","url":"/search/"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"4"},"name":"/index/","url":"/index/"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"5"},"name":"/push/","url":"/push/"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"6"},"name":"/spider/","url":"/spider/"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"7"},"name":"/security/role/home","url":"/security/role/home"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"8"},"name":"/security/user/home","url":"/security/user/home"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"9"},"name":"/security/resource/home","url":"/security/resource/home"}
+{"_class":"com.faceye.component.security.web.web.entity.Resource","_id":{"$numberLong":"10"},"name":"/security/menu/home","url":"/security/menu/home"}

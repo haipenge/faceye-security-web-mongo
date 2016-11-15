@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- 用户登陆 -->
+	<definition name="security.web.user.login" extends="default.simple">
+	    <put-attribute name="default-center" value="/component/security/mobile/user/login.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 用户注册 -->
+	<definition name="security.web.user.register" extends="default.simple">
+	    <put-attribute name="default-center" value="/component/security/web/user/user_register.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

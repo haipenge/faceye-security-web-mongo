@@ -1,0 +1,1 @@
+{"_class":"com.faceye.component.security.web.web.entity.User","_id":{"$numberLong":"1"},"accountExpired":false,"accountLocked":false,"credentialsExpired":false,"enabled":true,"password":"21232f297a57a5a743894a0e4a801fc3","roles":[{"$id":{"$numberLong":"1"},"$ref":"security_role"}],"username":"admin"}
