@@ -18,7 +18,7 @@
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-2 control-label"><fmt:message key="security.web.user.name"></fmt:message></label>
 						<div class="col-sm-10">
-							<input type="text" name="j_username" class="form-control"
+							<input type="text" name="username" class="form-control"
 								value="<c:if test="${not empty param.loginFailure}"><c:out value="${SPRING_SECURITY_LAST_USERNAME}"/></c:if>"
 								class="security" placeholder="<fmt:message key="security.web.user.name"></fmt:message>" />
 						</div>
@@ -26,7 +26,7 @@
 					<div class="form-group">
 						<label for="inputPassword3" class="col-sm-2 control-label"><fmt:message key="security.web.user.password"></fmt:message></label>
 						<div class="col-sm-10">
-							<input type="password" name="j_password" class="form-control"
+							<input type="password" name="password" class="form-control"
 								placeholder="<fmt:message  key="security.web.user.password"></fmt:message>">
 						</div>
 					</div>

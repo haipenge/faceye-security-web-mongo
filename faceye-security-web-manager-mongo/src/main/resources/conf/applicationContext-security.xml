@@ -111,8 +111,8 @@
 
 	<bean id="usernamePasswordAuthenticationFilter"
 		class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
-		<property name="usernameParameter" value="j_username"></property>
-		<property name="passwordParameter" value="j_password"></property>
+		<property name="usernameParameter" value="username"></property>
+		<property name="passwordParameter" value="password"></property>
 		<property name="filterProcessesUrl" value="/j_spring_security_check"></property>
 		<property name="authenticationManager" ref="authenticationManager"></property>
 		<property name="rememberMeServices" ref="rememberMeServices"></property>
@@ -121,8 +121,8 @@
 	</bean>
 	<bean id="ajaxUsernamePasswordAuthenticationFilter"
 		class="com.faceye.component.security.web.service.impl.AjaxUsernamePasswordAuthenticationFilter">
-		<property name="usernameParameter" value="j_username"></property>
-		<property name="passwordParameter" value="j_password"></property>
+		<property name="usernameParameter" value="username"></property>
+		<property name="passwordParameter" value="password"></property>
 		<property name="filterProcessesUrl" value="/ajax_j_spring_security_check"></property>
 		<property name="authenticationManager" ref="authenticationManager"></property>
 		<property name="rememberMeServices" ref="rememberMeServices"></property>
