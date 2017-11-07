@@ -39,7 +39,7 @@ public class ResourceServiceImpl extends BaseMongoServiceImpl<Resource, Long, Re
 	}
 
 	@Override
-	public void remove(Long id) throws ServiceException {
+	public void remove(Long id) {
 		Resource resource = this.get(id);
 		List<Role> roles = this.roleService.getAll();
 		if (CollectionUtils.isNotEmpty(roles) && resource != null) {
@@ -63,7 +63,7 @@ public class ResourceServiceImpl extends BaseMongoServiceImpl<Resource, Long, Re
 	}
 
 	@Override
-	public void remove(Resource entity) throws ServiceException {
+	public void remove(Resource entity)  {
 		this.remove(entity.getId());
 	}
 

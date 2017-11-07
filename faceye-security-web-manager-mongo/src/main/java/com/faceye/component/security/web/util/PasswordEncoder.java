@@ -12,7 +12,7 @@ public class PasswordEncoder {
 		return res;
 	}
 	public static void main(String asrg[]) throws Exception{
-		System.out.println(PasswordEncoder.encoder("admin","admin"));
+		System.out.println(PasswordEncoder.encoder("haipenge","haipenge"));
 	}
 	
 }
