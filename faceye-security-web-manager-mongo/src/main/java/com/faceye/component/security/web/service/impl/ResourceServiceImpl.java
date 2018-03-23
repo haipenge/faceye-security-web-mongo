@@ -23,7 +23,7 @@ import com.faceye.component.security.web.repository.mongo.ResourceRepository;
 import com.faceye.component.security.web.service.ResourceService;
 import com.faceye.component.security.web.service.RoleService;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 
 @Service("web-resourceServiceImpl")
 public class ResourceServiceImpl extends BaseMongoServiceImpl<Resource, Long, ResourceRepository> implements ResourceService,

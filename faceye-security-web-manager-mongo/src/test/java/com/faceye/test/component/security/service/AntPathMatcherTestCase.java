@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.springframework.util.AntPathMatcher;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 import org.springframework.util.PathMatcher;
 
 @RunWith(JUnit4.class)
@@ -20,7 +20,7 @@ public class AntPathMatcherTestCase {
 		String url="/order/order/home";
 		String matcher="/order/order/home**";
 		boolean res=pathMatcher.match(matcher, url);
-		Assert.isTrue(res);
+		Assert.assertTrue(res);
 	}
 
 }

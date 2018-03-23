@@ -22,7 +22,7 @@ import com.faceye.component.security.repository.mongo.ResourceRepository;
 import com.faceye.component.security.service.ResourceService;
 import com.faceye.component.security.service.RoleService;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 
 @Service
 public class ResourceServiceImpl extends BaseMongoServiceImpl<Resource, Long, ResourceRepository> implements ResourceService,
@@ -37,7 +37,7 @@ public class ResourceServiceImpl extends BaseMongoServiceImpl<Resource, Long, Re
 	}
 
 	@Override
-	public void remove(Long id) throws ServiceException {
+	public void remove(Long id)   {
 		Resource resource = this.get(id);
 		List<Role> roles = this.roleService.getAll();
 		if (CollectionUtils.isNotEmpty(roles)) {
@@ -60,7 +60,7 @@ public class ResourceServiceImpl extends BaseMongoServiceImpl<Resource, Long, Re
 	}
 
 	@Override
-	public void remove(Resource entity) throws ServiceException {
+	public void remove(Resource entity)   {
 		this.remove(entity.getId());
 		;
 	}

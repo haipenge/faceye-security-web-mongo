@@ -52,7 +52,7 @@ public class UserServiceImpl extends BaseMongoServiceImpl<User, Long, UserReposi
 		// user.getRoles().clear();
 		if (roleIds != null && roleIds.length > 0) {
 			for (Long roleId : roleIds) {
-				Role role = this.roleRepository.findOne(roleId);
+				Role role = this.roleRepository.findById(roleId);
 				roles.add(role);
 			}
 			user.setRoles(roles);

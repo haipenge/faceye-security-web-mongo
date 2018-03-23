@@ -21,7 +21,7 @@ import com.faceye.component.security.repository.mongo.RoleRepository;
 import com.faceye.component.security.repository.mongo.UserRepository;
 import com.faceye.component.security.service.RoleService;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 
 /**
  * 角色服务类
@@ -44,13 +44,13 @@ public class RoleServiceImpl extends BaseMongoServiceImpl<Role, Long, RoleReposi
 	}
 
 	@Override
-	public void remove(Long id) throws ServiceException {
+	public void remove(Long id)   {
 		Role role = this.get(id);
 		this.remove(role);
 	}
 
 	@Override
-	public void remove(Role entity) throws ServiceException {
+	public void remove(Role entity)   {
 		List<User> users = this.userRepository.findAll();
 		if (CollectionUtils.isNotEmpty(users)) {
 			for (User user : users) {
@@ -87,7 +87,7 @@ public class RoleServiceImpl extends BaseMongoServiceImpl<Role, Long, RoleReposi
 		List<Resource> resources=new ArrayList<Resource>(0);
 		if (resourceIds != null && resourceIds.length > 0) {
 			for (Long resourceId : resourceIds) {
-				Resource resource = this.resourceRepository.findOne(resourceId);
+				Resource resource = this.resourceRepository.findById(resourceId);
 				resources.add(resource);
 			}
 		}

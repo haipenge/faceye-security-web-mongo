@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.domain.Page;
@@ -27,7 +26,7 @@ import com.faceye.component.security.web.entity.User;
 import com.faceye.component.security.web.service.RoleService;
 import com.faceye.component.security.web.service.SecurityInitService;
 import com.faceye.component.security.web.service.UserService;
-import com.faceye.component.security.web.util.PasswordEncoder;
+import com.faceye.component.security.web.util.PasswordEncoderUtil;
 import com.faceye.feature.controller.BaseController;
 import com.faceye.feature.util.http.HttpUtil;
 import com.faceye.feature.util.security.EncryptUtil;
@@ -112,7 +111,7 @@ public class UserController extends BaseController<User, Long, UserService> {
 		String password = entity.getPassword();
 		entity.setUsername(entity.getUsername().toLowerCase());
 		entity.setEmail(entity.getEmail().toLowerCase());
-		String encodingPassword = PasswordEncoder.encoder(password,entity.getUsername());
+		String encodingPassword = PasswordEncoderUtil.encoder(password);
 		if (entity.getId() == null) {
 			entity.setPassword(encodingPassword);
 			entity.setEncryptPassword(EncryptUtil.encrypt(password));
@@ -151,7 +150,7 @@ public class UserController extends BaseController<User, Long, UserService> {
 		String password = entity.getPassword();
 		entity.setUsername(entity.getUsername().toLowerCase());
 		entity.setEmail(entity.getEmail().toLowerCase());
-		String encodingPassword = PasswordEncoder.encoder(password,entity.getUsername());
+		String encodingPassword = PasswordEncoderUtil.encoder(password);
 		if (entity.getId() == null) {
 			entity.setEncryptPassword(EncryptUtil.encrypt(password));
 			entity.setPassword(encodingPassword);

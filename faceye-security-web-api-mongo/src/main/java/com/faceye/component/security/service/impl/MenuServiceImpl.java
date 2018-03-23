@@ -19,7 +19,7 @@ import com.faceye.component.security.service.MenuService;
 import com.faceye.component.security.service.ResourceService;
 import com.faceye.component.security.service.RoleService;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 
 @Service
 @Transactional
@@ -38,13 +38,13 @@ public class MenuServiceImpl extends BaseMongoServiceImpl<Menu, Long, MenuReposi
 	 * 删除一个菜单
 	 */
 	@Override
-	public void remove(Long id) throws ServiceException {
+	public void remove(Long id)   {
 		Menu menu = this.get(id);
 		this.remove(menu);
 	}
 
 	@Override
-	public void remove(Menu entity) throws ServiceException {
+	public void remove(Menu entity)   {
 		// Resource resource=entity.getResource();
 		// this.resourceService.remove(resource);
 		// entity.setRoles(new HashSet<Role>(0));

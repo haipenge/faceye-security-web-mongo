@@ -11,17 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.RememberMeAuthenticationProvider;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.RememberMeServices;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.authentication.WebAuthenticationDetails;
-import org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +24,7 @@ import com.faceye.component.security.web.entity.User;
 import com.faceye.component.security.web.repository.mongo.RoleRepository;
 import com.faceye.component.security.web.repository.mongo.UserRepository;
 import com.faceye.component.security.web.service.UserService;
-import com.faceye.component.security.web.util.PasswordEncoder;
+import com.faceye.component.security.web.util.PasswordEncoderUtil;
 import com.faceye.component.security.web.util.SecurityUtil;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 import com.faceye.feature.util.RandUtil;
@@ -73,12 +67,12 @@ public class UserServiceImpl extends BaseMongoServiceImpl<User, Long, UserReposi
 
 	@Override
 	public void saveUserAuthRoles(Long userId, Long[] roleIds) {
-		User user = this.dao.findOne(userId);
+		User user = this.get(userId);
 		List<Role> roles = new ArrayList<Role>();
 		// user.getRoles().clear();
 		if (roleIds != null && roleIds.length > 0) {
 			for (Long roleId : roleIds) {
-				Role role = this.roleRepository.findOne(roleId);
+				Role role = this.roleRepository.findById(roleId).get();
 				roles.add(role);
 			}
 			user.setRoles(roles);
@@ -133,7 +127,7 @@ public class UserServiceImpl extends BaseMongoServiceImpl<User, Long, UserReposi
 		if (user == null) {
 			String username=RandUtil.randString().toLowerCase();
 			logger.debug(">>FaceYe user with openid " + openid + " is not exist.");
-			Role role = this.roleRepository.findOne(Long.parseLong(this.registerRoleId));
+			Role role = this.roleRepository.findById(Long.parseLong(this.registerRoleId)).get();
 			List<Role> roles = new ArrayList<Role>(0);
 			roles.add(role);
 			user = new User();
@@ -141,7 +135,7 @@ public class UserServiceImpl extends BaseMongoServiceImpl<User, Long, UserReposi
 			user.setEncryptPassword(com.faceye.feature.util.security.EncryptUtil.encrypt(password));
 			user.setWeixinOpenId(openid);
 			user.setUsername(username);
-			String encodingPassword = PasswordEncoder.encoder(password,username);
+			String encodingPassword = PasswordEncoderUtil.encoder(password);
 			user.setPassword(encodingPassword);
 			user.setEnabled(true);
 			this.save(user);

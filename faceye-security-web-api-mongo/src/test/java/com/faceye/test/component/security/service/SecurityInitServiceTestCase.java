@@ -24,18 +24,18 @@ public class SecurityInitServiceTestCase extends BaseServiceTestCase {
 	@Test
 	public void testIsInited() throws Exception{
 		boolean isInit=this.securityInitService.isInited();
-		Assert.isTrue(!isInit);
+		Assert.assertTrue(!isInit);
 	}
 	@Test
 	public void testInit() throws Exception{
 		this.securityInitService.init();
 		boolean isInited=this.securityInitService.isInited();
-		Assert.isTrue(isInited);
+		Assert.assertTrue(isInited);
 	}
 	@Test
 	public void testClear() throws Exception{
 		this.securityInitService.clear();
 		boolean isInited=this.securityInitService.isInited();
-		Assert.isTrue(!isInited);
+		Assert.assertTrue(!isInited);
 	}
 }
